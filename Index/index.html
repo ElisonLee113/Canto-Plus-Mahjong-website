@@ -4,8 +4,29 @@
 		<script src="app.js"></script>
 	</head>
 	<body>
-		<p> Testing... </p>
-		<p id="test"></p>
-		<button type="button" onclick="test()">Click to test js</button>
+		<p id="debug"> Current status: empty </p>
+
+		<p id="p1_score"> Player 1 score: 0</p>
+		<p id="p2_score"> Player 2 score: 0</p>
+		<p id="p3_score"> Player 3 score: 0</p>
+		<p id="p4_score"> Player 4 score: 0</p>
+
+		<form id="selected_player">
+			<input type="radio"	id="adds_p1" name="player" value="1">
+			<label for="adds_p1">Player 1</label>
+
+			<input type="radio" id="adds_p2" name="player" value="2">
+			<label for="adds_p2">Player 2</label>
+
+			<input type="radio" id="adds_p3" name="player" value="3">
+			<label for="adds_p3">Player 3</label>
+
+			<input type="radio" id="adds_p4" name="player" value="4">
+			<label for="adds_p4">Player 4</label>
+		</form>
+		<p style="display:inline">Score to be added: </p>
+		<input type="text" id="adds" name="add_score" value="0">
+
+		<button type="button" onclick="update()">Submit</button>
 	</body>
 </html>
