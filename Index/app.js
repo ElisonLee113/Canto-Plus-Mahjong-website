@@ -21,6 +21,35 @@ function isInteger(s){
 
 }
 
+function restore_to_default(){
+    punishment_list = default_punishment_list;
+}
+
+function reset_textbox(){
+    document.getElementById("custom_list").value = "";
+}
+
+function generate_punishment_list(){
+    var new_list = [], temp = "", s = document.getElementById("custom_list").value, size = 0;
+    for(var i = 0; i < s.length; i++){
+        temp += s[i];
+        if(s[i] == '\n' || i + 1 == s.length){
+            new_list.push(temp);
+            temp="";
+            size++;
+        }
+    }
+    if(size < 3){
+        alert("Plase add at least 3 punishments into the textbox.");
+    }
+    else{
+        for(var i = 0; i < size; i++){
+            console.log(new_list[i]);
+        }
+        punishment_list = new_list;
+    }
+}
+
 function generate_slot(){
     var temp_html = "";
     for(var i = 0; i < punishment_list.length ; i++){
@@ -41,6 +70,7 @@ function update_slot(shown_slot){
         }
     }, 10);
 }
+
 function enable(){
     $('#g_punishment').removeAttr('disabled');
 }
