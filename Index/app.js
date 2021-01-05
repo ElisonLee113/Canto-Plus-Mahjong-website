@@ -53,7 +53,7 @@ function generate_punishment_list(){
 function generate_slot(){
     var temp_html = "";
     for(var i = 0; i < punishment_list.length ; i++){
-        temp_html += "<p id=\"slot_element" + i + "\"> " + punishment_list[i] + " </p>"
+        temp_html += "<p id=\"slot_element" + i + "\"> Punishment: " + punishment_list[i] + " </p>"
     }
     document.getElementById("slot").innerHTML = temp_html;
 }
