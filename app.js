@@ -3,6 +3,7 @@ var round = ["empty"];
 var lowest_score_players;
 var punishment_list = ["Punishment 1","Punishment 2","Punishment 3"];
 var default_punishment_list = punishment_list;
+var player_name = ["Player 0","Player 1","Player 2","Player 3","Player 4"]
 
 function test(){
     document.getElementById("test").innerHTML = "Yay it works!";
@@ -91,7 +92,7 @@ function update_scoreboard(){
     for (var i = 1; i <= 4; i++) {
         console.log("p" + i + "_score");
         console.log("Player " + i + "score: " + score[i]);
-        document.getElementById("p" + i + "_score").innerHTML = "Player " + i + " score: " + score[i];
+        document.getElementById("p" + i + "_score").innerHTML = player_name[i] + " score: " + score[i];
     }
 }
 
@@ -106,9 +107,9 @@ function update_lowest(){
     for(var i = 1; i <= 4; i++){
         if(min == score[i]){
             if(cnt) lowest_score_players += ", ";
-            lowest += "Player " + i;
+            lowest += player_name[i];
             if(cnt) output += ", ";
-            output += "Player " + i;
+            output += player_name[i];
             cnt++;
         }
     }
@@ -117,7 +118,6 @@ function update_lowest(){
 }
 
 function update(){
-    var radios = document.getElementsByName('selected_player');
     var chosen_player = 0;
     for (var i = 1; i <= 4; i++) {
         if (document.getElementById("adds_p"+i).checked) {
@@ -140,4 +140,25 @@ function update(){
 
     update_scoreboard();
     update_lowest();
+}
+
+
+function update_name(){
+    for(var i = 1; i <= 4; i++){
+        if(document.getElementById("name"+i).value != "") player_name[i] = document.getElementById("name"+i).value;
+    }
+    var warning = 0;
+    for(var i = 1; i <= 4; i++){
+        for(var j = i + 1; j <= 4; j++){
+            if(player_name[i] == player_name[j]){
+                warning = true;
+                player_name[j] = "Player " + j;
+            }
+        }
+    }
+    if(warning){
+        alert("Name Overlapped. Please change another name.");
+    }
+    update_lowest();
+    update_scoreboard();
 }
