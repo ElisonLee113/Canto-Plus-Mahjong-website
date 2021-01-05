@@ -14,10 +14,14 @@ function Invalid_input_alert(){
 
 function isInteger(s){
     s = String(s);
+    var num_count = 0, space_count = 0;
     for(var i=0, len = s.length; i<len; i++){
-        if((s[i]<'0' || s[i]>'9') && s[i] != ' ') return false;
+        if(s[i] >= '0' && s[i] <= '9') num_count++;
+        if(s[i] == ' ') space_count++;
     }
-    return true;
+    console.log(num_count);
+    console.log(space_count);
+    return (s.length == space_count + num_count && s.length);
 
 }
 
