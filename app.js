@@ -15,7 +15,7 @@ function Invalid_input_alert(){
 function isInteger(s){
     s = String(s);
     for(var i=0, len = s.length; i<len; i++){
-        if(s[i]<'0' || s[i]>'9') return false;
+        if((s[i]<'0' || s[i]>'9') && s[i] != ' ') return false;
     }
     return true;
 
