@@ -159,6 +159,9 @@ function update_name(){
     if(warning){
         alert("Name Overlapped. Please change another name.");
     }
+    for(var i = 1; i <= 4; i++){
+        document.getElementById("adds_name_p"+i).innerHTML = player_name[i];
+    }
     update_lowest();
     update_scoreboard();
 }
