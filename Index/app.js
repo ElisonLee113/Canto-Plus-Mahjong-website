@@ -1,6 +1,8 @@
 var score = [0, 0, 0, 0, 0];
 var round = ["empty"];
 var lowest_score_players;
+var punishment_list = ["Punishment 1","Punishment 2","Punishment 3"];
+var default_punishment_list = punishment_list;
 
 function test(){
     document.getElementById("test").innerHTML = "Yay it works!";
@@ -19,6 +21,38 @@ function isInteger(s){
 
 }
 
+function generate_slot(){
+    var temp_html = "";
+    for(var i = 0; i < punishment_list.length ; i++){
+        temp_html += "<p id=\"slot_element" + i + "\"> " + punishment_list[i] + " </p>"
+    }
+    document.getElementById("slot").innerHTML = temp_html;
+}
+
+function update_slot(shown_slot){
+    var count = 0;
+    var x = setInterval(function() {
+        count++;
+        $("#slot_element" + shown_slot).hide();
+        shown_slot = Math.floor(Math.random() * punishment_list.length);
+        $("#slot_element" + shown_slot).show();
+        if (count == 150) {
+            clearInterval(x);
+        }
+    }, 10);
+}
+function enable(){
+    $('#g_punishment').removeAttr('disabled');
+}
+
+function generate_punishment(){
+    $('#g_punishment').attr('disabled', 'disabled');
+    setTimeout(enable, 2000);
+    generate_slot();
+    for(var i = 1; i < punishment_list.length ; i++) $("#slot_element"+i).hide();
+    var shown_slot = update_slot(0,0);
+}
+
 function update_scoreboard(){
     for (var i = 1; i <= 4; i++) {
         console.log("p" + i + "_score");
@@ -32,7 +66,7 @@ function update_lowest(){
     for(var i = 1; i <= 4; i++){
         if(min > score[i]) min = score[i];
     }
-    var output = "Lowest Score: ";
+    var output = "Player to be punished: ";
     lowest_score_players = "";
     var cnt = 0;
     for(var i = 1; i <= 4; i++){
@@ -44,7 +78,7 @@ function update_lowest(){
             cnt++;
         }
     }
-    if(cnt == 4) output = "Lowest Score: None";
+    if(cnt == 4) output = "Player to be punished: None";
     document.getElementById("lowest").innerHTML = output;
 }
 

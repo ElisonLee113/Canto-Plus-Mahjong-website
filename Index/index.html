@@ -2,6 +2,7 @@
 	<head>
 		<title>Canto+ Mahjong Website</title>
 		<script src="app.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	</head>
 	<body>
 		<p id="debug"> Current status: empty </p>
@@ -11,24 +12,31 @@
 		<p id="p3_score"> Player 3 score: 0</p>
 		<p id="p4_score"> Player 4 score: 0</p>
 
-		<p id="lowest"> Lowest score: None </p>
+		<input type="radio"	id="adds_p1" name="player" value="1">
+		<label for="adds_p1">Player 1</label>
 
-		<form id="selected_player">
-			<input type="radio"	id="adds_p1" name="player" value="1">
-			<label for="adds_p1">Player 1</label>
+		<input type="radio" id="adds_p2" name="player" value="2">
+		<label for="adds_p2">Player 2</label>
 
-			<input type="radio" id="adds_p2" name="player" value="2">
-			<label for="adds_p2">Player 2</label>
+		<input type="radio" id="adds_p3" name="player" value="3">
+		<label for="adds_p3">Player 3</label>
 
-			<input type="radio" id="adds_p3" name="player" value="3">
-			<label for="adds_p3">Player 3</label>
+		<input type="radio" id="adds_p4" name="player" value="4">
+		<label for="adds_p4">Player 4</label>
 
-			<input type="radio" id="adds_p4" name="player" value="4">
-			<label for="adds_p4">Player 4</label>
-		</form>
+		<br>
 		<p style="display:inline">Score to be added: </p>
 		<input type="text" id="adds" name="add_score" value="0">
 
-		<button type="button" onclick="update()">Submit</button>
+		<button type="button" id="submit_score" onclick="update()">Submit</button>
+
+		<br>
+		<p id="lowest"> player to be punished: None </p>
+		<br>
+
+		<button type="button" id="g_punishment" onclick="generate_punishment()">Generate Punishment</button>
+		<div id="slot">
+			<p> None </p>
+		</div>
 	</body>
 </html>
