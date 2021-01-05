@@ -1,5 +1,6 @@
 var score = [0, 0, 0, 0, 0];
 var round = ["empty"];
+var lowest_score_players;
 
 function test(){
     document.getElementById("test").innerHTML = "Yay it works!";
@@ -26,6 +27,27 @@ function update_scoreboard(){
     }
 }
 
+function update_lowest(){
+    var min=1e9;
+    for(var i = 1; i <= 4; i++){
+        if(min > score[i]) min = score[i];
+    }
+    var output = "Lowest Score: ";
+    lowest_score_players = "";
+    var cnt = 0;
+    for(var i = 1; i <= 4; i++){
+        if(min == score[i]){
+            if(cnt) lowest_score_players += ", ";
+            lowest += "Player " + i;
+            if(cnt) output += ", ";
+            output += "Player " + i;
+            cnt++;
+        }
+    }
+    if(cnt == 4) output = "Lowest Score: None";
+    document.getElementById("lowest").innerHTML = output;
+}
+
 function update(){
     var radios = document.getElementsByName('selected_player');
     var chosen_player = 0;
@@ -49,4 +71,5 @@ function update(){
     round.push(chosen_player + toString(score_to_be_added));
 
     update_scoreboard();
+    update_lowest();
 }
