@@ -18,7 +18,7 @@ function Invalid_input_alert(){
 function isInteger(s){
     s = String(s);
     var num_count = 0, space_count = 0;
-    for(var i=0, len = s.length; i<len; i++){
+    for(var i = 0, len = s.length; i < len; i++){
         if(s[i] >= '0' && s[i] <= '9') num_count++;
         if(s[i] == ' ') space_count++;
     }
@@ -26,6 +26,22 @@ function isInteger(s){
     console.log(space_count);
     return (s.length == space_count + num_count && s.length);
 
+}
+
+function remove_trailing_spaces(s){
+    for(var i = 0, len = s.length; i < len; i++){
+        if(s[i] == ' ') s[i]='';
+        else break;
+    }
+    return s;
+}
+
+function remove_ending_spaces(s){
+    for(var i = s.length - 1; i >= 0; i--){
+        if(s[i] == ' ') s[i]='';
+        else break;
+    }
+    return s;
 }
 
 function update_page(called){
@@ -165,7 +181,12 @@ function clear_score(){
 
 function update_name(){
     for(var i = 1; i <= 4; i++){
-        if(document.getElementById("name"+i).value != "") player_name[i] = document.getElementById("name"+i).value;
+        var temp = document.getElementById("name"+i).value;
+        temp = remove_trailing_spaces(temp);
+        temp = remove_ending_spaces(temp);
+        if(temp != ""){
+            player_name[i] = temp;
+        }
     }
     var warning = 0;
     for(var i = 1; i <= 4; i++){
