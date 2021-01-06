@@ -23,14 +23,19 @@
 		  	<div class="collapse" id="navbarToggleExternalContent">
 		    	<div class="bg-dark p-4">
 		      		<h4 class="text-white">Canto-Plus Mahjong Helper System</h4>
-					<button type="button" id="button0" onclick="update_page(0)" class="btn btn-warning">Change Name</button>
-					<button type="button" id="button1" onclick="update_page(1)" class="btn btn-outline-warning">Record Score</button>
-					<button type="button" id="button2" onclick="update_page(2)" class="btn btn-outline-warning">Punishment</button>
+					<button type="button" id="button0" onclick="update_page(0)" class="btn btn-warning">Home</button>
+					<button type="button" id="button1" onclick="update_page(1)" class="btn btn-outline-warning">Change Name</button>
+					<button type="button" id="button2" onclick="update_page(2)" class="btn btn-outline-warning">Record Score</button>
+					<button type="button" id="button3" onclick="update_page(3)" class="btn btn-outline-warning">Punishment</button>
 		    	</div>
 		  	</div>
 		</div>
 
 		<div id="page0">
+			<h1>HOME</h1>
+		</div>
+
+		<div id="page1" style="display:none">
 			<p style="display:inline"> Input player 1 name: </p>
 			<input type="text" id="name1" name="add_name"> <br>
 
@@ -47,7 +52,7 @@
 			<br>
 		</div>
 
-		<div id="page1" style="display:none">
+		<div id="page2" style="display:none">
 			<p id="p1_score"> Player 1 score: 0</p>
 			<p id="p2_score"> Player 2 score: 0</p>
 			<p id="p3_score"> Player 3 score: 0</p>
@@ -72,7 +77,7 @@
 			<button type="button" id="submit_score" onclick="update()">Submit</button>
 		</div>
 
-		<div id="page2" style="display:none">
+		<div id="page3" style="display:none">
 			<button type="button" id="g_punishment" onclick="generate_punishment()">Generate Punishment</button>
 			<p id="lowest"> player to be punished: None </p>
 			<div id="slot" style="display:inline">

@@ -5,7 +5,7 @@ var punishment_list = ["Punishment 1","Punishment 2","Punishment 3"];
 var default_punishment_list = punishment_list;
 var player_name = ["Player 0","Player 1","Player 2","Player 3","Player 4"]
 var current_page = 0;
-var number_of_page = 3;
+var number_of_page = 4;
 
 function test(){
     document.getElementById("test").innerHTML = "Yay it works!";
