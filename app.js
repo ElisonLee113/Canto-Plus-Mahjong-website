@@ -4,6 +4,8 @@ var lowest_score_players;
 var punishment_list = ["Punishment 1","Punishment 2","Punishment 3"];
 var default_punishment_list = punishment_list;
 var player_name = ["Player 0","Player 1","Player 2","Player 3","Player 4"]
+var current_page = 0;
+var number_of_page = 3;
 
 function test(){
     document.getElementById("test").innerHTML = "Yay it works!";
@@ -24,6 +26,18 @@ function isInteger(s){
     console.log(space_count);
     return (s.length == space_count + num_count && s.length);
 
+}
+
+function update_page(called){
+    for(var i = 0; i < number_of_page; i++) $("#page"+i).hide();
+    $("#page"+called).show();
+    console.log(called);
+    console.log(current_page);
+    document.getElementById("button" + current_page).classList.remove("btn-warning");
+    document.getElementById("button" + current_page).classList.add("btn-outline-warning");
+    current_page = called;
+    document.getElementById("button" + current_page).classList.remove("btn-outline-warning");
+    document.getElementById("button" + current_page).classList.add("btn-warning");
 }
 
 function restore_to_default(){
