@@ -16,7 +16,7 @@
 
 		  	<nav class="navbar navbar-dark bg-dark">
 				<img src="img/canto_plus_logo.jpeg" width="120" height="50" alt="Canto+ Logo">
-		    	<button class="navbar-toggler ms-auto me-4" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+		    	<button id="navbutton" class="navbar-toggler ms-auto me-4" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
 		      		<span class="navbar-toggler-icon"></span>
 		    	</button>
 		  	</nav>
@@ -74,7 +74,9 @@
 			<p style="display:inline">Score to be added: </p>
 			<input type="text" id="adds" name="add_score" value="0">
 
-			<button type="button" id="submit_score" onclick="update()">Submit</button>
+			<button type="button" id="submit_score" onclick="update()">Submit</button> <br>
+
+			<button type="button" id="clear_score" onclick="clear_score()">Clear recorded score</button>
 		</div>
 
 		<div id="page3" style="display:none">

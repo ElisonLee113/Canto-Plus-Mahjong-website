@@ -33,6 +33,7 @@ function update_page(called){
     $("#page"+called).show();
     console.log(called);
     console.log(current_page);
+    document.getElementById("navbutton").click();
     document.getElementById("button" + current_page).classList.remove("btn-warning");
     document.getElementById("button" + current_page).classList.add("btn-outline-warning");
     current_page = called;
@@ -156,6 +157,11 @@ function update(){
     update_lowest();
 }
 
+function clear_score(){
+    for(var i = 0; i <= 4; i++) score[i] = 0;
+    update_lowest();
+    update_scoreboard();
+}
 
 function update_name(){
     for(var i = 1; i <= 4; i++){
