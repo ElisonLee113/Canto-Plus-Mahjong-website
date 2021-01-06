@@ -1,20 +1,49 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 	<head>
+    	<meta charset="utf-8">
+    	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    	<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+
 		<title>Canto+ Mahjong Website</title>
 		<script src="app.js"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	</head>
 	<body>
+
+		<div class="pos-f-t">
+		  	<div class="collapse" id="navbarToggleExternalContent">
+		    	<div class="bg-dark p-4">
+		      		<h4 class="text-white">Canto-Plus Mahjong Helper System</h4>
+					<button type="button" class="btn btn-warning">Change Name</button>
+					<button type="button" class="btn btn-outline-warning">Record Score</button>
+					<button type="button" class="btn btn-outline-warning">Punishment</button>
+		    	</div>
+		  	</div>
+
+		  	<nav class="navbar navbar-dark bg-dark">
+				<img src="img/canto_plus_logo.jpeg" width="130" height="50" alt="Canto+ Logo">
+		    	<button class="navbar-toggler ms-auto me-4" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+		      		<span class="navbar-toggler-icon"></span>
+		    	</button>
+		  	</nav>
+		</div>
+
 		<p id="debug"> Current status: empty </p>
 
 		<p style="display:inline"> Input player 1 name: </p>
 		<input type="text" id="name1" name="add_name"> <br>
+
 		<p style="display:inline"> Input player 2 name: </p>
 		<input type="text" id="name2" name="add_name"> <br>
+
 		<p style="display:inline"> Input player 3 name: </p>
 		<input type="text" id="name3" name="add_name"> <br>
+
 		<p style="display:inline"> Input player 4 name: </p>
 		<input type="text" id="name4" name="add_name"> <br>
+
 		<button type="button" id="change_name" onclick="update_name()">Change name!</button>
 		<br>
 
@@ -53,5 +82,9 @@
 		<button type="button" id="g_punishment_list" onclick="generate_punishment_list()">Make Punishment List</button>
 		<button type="button" id="reset" onclick="reset_textbox()">Reset textbox</button>
 		<button type="button" id="reset_d" onclick="restore_to_default()">Reset to default</button>
+
+		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 	</body>
 </html>
