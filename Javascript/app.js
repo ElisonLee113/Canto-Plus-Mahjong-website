@@ -12,7 +12,7 @@ function test(){
 }
 
 function Invalid_input_alert(){
-    alert("Invalid Input. Please make sure you chose at least one player and the score is a valid number between 1 and 13.");
+    alert("Invalid Input. Please make sure the score you chose is a valid number between 1 and 13.");
 }
 
 function isInteger(s){
@@ -149,14 +149,8 @@ function update_lowest(){
 }
 
 function update(){
-    var chosen_player = 0;
-    for (var i = 1; i <= 4; i++) {
-        if (document.getElementById("adds_p"+i).checked) {
-            chosen_player = document.getElementById("adds_p"+i).value;
-            break;
-        }
-    }
-    var score_to_be_added = document.getElementById('adds').value;
+    var chosen_player = document.getElementById("choose_add_score").value;
+    var score_to_be_added = document.getElementById("adds").value;
 
     console.log("UPDATING - " + chosen_player + " | " + score_to_be_added);
     console.log(isInteger(score_to_be_added));
@@ -186,6 +180,9 @@ function update_name(){
         temp = remove_ending_spaces(temp);
         if(temp != ""){
             player_name[i] = temp;
+        }
+        else{
+            player_name[i] = "Player " + i;
         }
     }
     var warning = 0;
