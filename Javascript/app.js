@@ -5,7 +5,9 @@ var punishment_list = ["Punishment 1","Punishment 2","Punishment 3"];
 var default_punishment_list = punishment_list;
 var player_name = ["Player 0","Player 1","Player 2","Player 3","Player 4"]
 var current_page = 0;
-var number_of_page = 4;
+var number_of_page = 5;
+var button_color = ["primary","secondary","success","danger","warning","info","light"];
+var fixed = 4;
 
 function test(){
     document.getElementById("test").innerHTML = "Yay it works!";
@@ -86,10 +88,19 @@ function generate_punishment_list(){
     }
 }
 
+function generate_color(s){
+    var sum = 0;
+    for(var i = 0; i < s.length; i++) sum += s.charCodeAt(i);
+    if(fixed != -1) sum = fixed;
+    return button_color[sum % 7];
+}
+
 function generate_slot(){
     var temp_html = "";
     for(var i = 0; i < punishment_list.length ; i++){
-        temp_html += "<p id=\"slot_element" + i + "\"> Punishment: " + punishment_list[i] + " </p>"
+        temp_html += '<input type="checkbox" class="btn-check" checked autocomplete="off">' +
+        '<label class="btn btn-' + generate_color(punishment_list[i]) + '" id="slot_element'+ i + '" for="btn-check-2">'+ punishment_list[i] + '</label>';
+        //temp_html += "<p id=\"slot_element" + i + "\"> Punishment: " + punishment_list[i] + " </p>"
     }
     document.getElementById("slot").innerHTML = temp_html;
 }
@@ -101,10 +112,10 @@ function update_slot(shown_slot){
         $("#slot_element" + shown_slot).hide();
         shown_slot = Math.floor(Math.random() * punishment_list.length);
         $("#slot_element" + shown_slot).show();
-        if (count == 150) {
+        if (count == 50) {
             clearInterval(x);
         }
-    }, 10);
+    }, 30);
 }
 
 function enable(){

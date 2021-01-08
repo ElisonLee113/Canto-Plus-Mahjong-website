@@ -45,6 +45,7 @@
 						<button type="button" id="button1" onclick="update_page(1)" class="btn btn-outline-warning full-width">Change Name</button>
 						<button type="button" id="button2" onclick="update_page(2)" class="btn btn-outline-warning full-width">Record Score</button>
 						<button type="button" id="button3" onclick="update_page(3)" class="btn btn-outline-warning full-width">Punishment</button>
+						<button type="button" id="button4" onclick="update_page(4)" class="btn btn-outline-warning full-width">Settings</button>
 					<!--</div>-->
 		    	</div>
 		  	</div>
@@ -99,15 +100,20 @@
 			<div id="page3" style="display:none">
 				<button type="button" id="g_punishment" onclick="generate_punishment()">Generate Punishment</button>
 				<p id="lowest"> player to be punished: None </p>
-				<div id="slot" style="display:inline">
-					<p> Punishment: None </p>
+				<div id="slot">
+					<input type="checkbox" class="btn-check" checked autocomplete="off">
+					<label class="btn btn-warning" for="btn-check-2">Punishment: None</label>
 				</div>
-
-				<textarea id="custom_list" class="form-control smaller-width" cols="50"></textarea>
+				<br>
+				<textarea id="custom_list" class="form-control smaller-width" cols="100"></textarea>
 				<br>
 				<button type="button" id="g_punishment_list" onclick="generate_punishment_list()">Make Punishment List</button>
 				<button type="button" id="reset" onclick="reset_textbox()">Reset textbox</button>
 				<button type="button" id="reset_d" onclick="restore_to_default()">Reset to default</button>
+			</div>
+
+			<div id="page4" style="display:none">
+				<h1>Settings</h1>
 			</div>
 
 		</div>
