@@ -61,6 +61,7 @@ function update_page(called){
 
 function restore_to_default(){
     punishment_list = default_punishment_list;
+    document.getElementById("slot").innerHTML = '<input type="checkbox" class="btn-check" checked autocomplete="off"><label class="btn btn-lg btn-warning" for="btn-check-2">Punishment: None</label>';
 }
 
 function reset_textbox(){
@@ -99,7 +100,7 @@ function generate_slot(){
     var temp_html = "";
     for(var i = 0; i < punishment_list.length ; i++){
         temp_html += '<input type="checkbox" class="btn-check" checked autocomplete="off">' +
-        '<label class="btn btn-' + generate_color(punishment_list[i]) + '" id="slot_element'+ i + '" for="btn-check-2">'+ punishment_list[i] + '</label>';
+        '<label class="btn btn-lg btn-' + generate_color(punishment_list[i]) + '" id="slot_element'+ i + '" for="btn-check-2">'+ punishment_list[i] + '</label>';
         //temp_html += "<p id=\"slot_element" + i + "\"> Punishment: " + punishment_list[i] + " </p>"
     }
     document.getElementById("slot").innerHTML = temp_html;
@@ -112,10 +113,10 @@ function update_slot(shown_slot){
         $("#slot_element" + shown_slot).hide();
         shown_slot = Math.floor(Math.random() * punishment_list.length);
         $("#slot_element" + shown_slot).show();
-        if (count == 50) {
+        if (count == 75) {
             clearInterval(x);
         }
-    }, 30);
+    }, 20);
 }
 
 function enable(){
