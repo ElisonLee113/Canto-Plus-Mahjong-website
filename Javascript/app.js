@@ -52,11 +52,11 @@ function update_page(called){
     console.log(called);
     console.log(current_page);
     document.getElementById("navbutton").click();
-    document.getElementById("button" + current_page).classList.remove("btn-warning");
-    document.getElementById("button" + current_page).classList.add("btn-outline-warning");
+    document.getElementById("button" + current_page).classList.remove("btn-light");
+    document.getElementById("button" + current_page).classList.add("btn-outline-light");
     current_page = called;
-    document.getElementById("button" + current_page).classList.remove("btn-outline-warning");
-    document.getElementById("button" + current_page).classList.add("btn-warning");
+    document.getElementById("button" + current_page).classList.remove("btn-outline-light");
+    document.getElementById("button" + current_page).classList.add("btn-light");
 }
 
 function restore_to_default(){
