@@ -55,6 +55,7 @@
 
 			<div id="page0">
 				<h1>HOME</h1>
+				<p>This webpage was intended for a project as part of the JA programme. Unfortunately, this project has been stopped. However, the basic functions here are still usable with basic score_board and customizable punishment list, e.t.c. </p>
 			</div>
 
 			<div id="page1" style="display:none">
@@ -70,7 +71,7 @@
 				<p style="display:inline"> Input player 4 name: </p>
 				<input type="text" id="name4" name="add_name"> <br>
 
-				<button type="button" id="change_name" onclick="update_name()">Change name!</button>
+				<button type="button" id="change_name" onclick="update_name()" class="btn btn-outline-success full-wdith mt-1">Change name!</button>
 				<br>
 			</div>
 
@@ -98,7 +99,7 @@
 			</div>
 
 			<div id="page3" style="display:none">
-				<button type="button" id="g_punishment" onclick="generate_punishment()">Generate Punishment</button>
+				<button type="button" id="g_punishment" onclick="generate_punishment()" class="btn btn-outline-success full-wdith mt-1">Generate Punishment</button>
 				<p id="lowest"> player to be punished: None </p>
 				<div id="slot">
 					<input type="checkbox" class="btn-check" checked autocomplete="off">
@@ -107,9 +108,9 @@
 				<br>
 				<textarea id="custom_list" class="form-control smaller-width" rows="10"></textarea>
 				<br>
-				<button type="button" id="g_punishment_list" onclick="generate_punishment_list()">Make Punishment List</button>
-				<button type="button" id="reset" onclick="reset_textbox()">Reset textbox</button>
-				<button type="button" id="reset_d" onclick="restore_to_default()">Reset to default</button>
+				<button type="button" id="g_punishment_list" onclick="generate_punishment_list()" class="btn btn-outline-success full-wdith mt-1">Make Punishment List</button>
+				<button type="button" id="reset" onclick="reset_textbox()" class="btn btn-outline-danger full-wdith mt-1">Reset textbox</button>
+				<button type="button" id="reset_d" onclick="restore_to_default()" class="btn btn-outline-danger full-wdith mt-1">Reset to default</button>
 			</div>
 
 			<div id="page4" style="display:none">
